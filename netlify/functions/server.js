@@ -1,20 +1,12 @@
-const app = require('../../server.js');
-
-exports.handler = async (event, context) => {
-    return app(event, context);
-};
-
-// Netlify serverless compatibility
+const express = require('express');
 const serverless = require('serverless-http');
 
-// Export for Netlify Functions
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = serverless(app);
-}
+// Import your main app
+const mainApp = require('../../server.js');
 
-// Local development
-if (require.main === module) {
-    app.listen(PORT, () => {
-        console.log(`🎬 TrailerHub running at http://localhost:${PORT}`);
-    });
-}
+// Create wrapper app
+const app = express();
+app.use('/', mainApp);
+
+// Export for Netlify
+module.exports.handler = serverless(app);

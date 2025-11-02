@@ -1,9 +1,7 @@
 [build]
   command = "npm install"
   publish = "."
-
-[build.environment]
-  NODE_VERSION = "18"
+  functions = "netlify/functions"
 
 [[redirects]]
   from = "/*"
