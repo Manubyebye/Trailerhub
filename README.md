@@ -1,3 +1,5 @@
+<img width="1366" height="768" alt="Screenshot 2025-10-28 143126" src="https://github.com/user-attachments/assets/de8b04bf-2287-4368-9fa8-bc81764e4331" />
+<img width="1366" height="768" alt="Screenshot 2025-10-28 143035" src="https://github.com/user-attachments/assets/f3e8b0c2-ce7d-41e3-91d5-78af2f4e1483" />
 🎬 TrailerHub - Movie Trailer Discovery Platform
 🌟 Project Overview
 I built a full-stack movie trailer discovery website called TrailerHub! This is a complete web application that lets users explore thousands of movies, watch trailers, and discover films across unique categories. The project showcases my journey from planning to deployment, combining multiple technologies to create a professional, user-friendly platform.
