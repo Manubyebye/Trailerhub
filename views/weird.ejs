@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🎬 TrailerHub</div>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/anime">Anime</a>
+                <a href="/weird" class="active">Weird & Freak</a>
+                <a href="/weed">Weed & Smoke</a>
+            </div>
+            <div class="search-container">
+                <form action="/search" method="GET" class="search-form">
+                    <input type="text" name="q" placeholder="Search weird movies..." value="<%= searchQuery || '' %>" class="search-input">
+                    <button type="submit" class="search-button">🔍</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <section class="category-hero weird-hero">
+    <div class="hero-gif-background"></div>
+    <div class="hero-content">
+        <div class="floating-elements">
+            <div class="floating alien">👽</div>
+            <div class="floating ghost">👻</div>
+            <div class="floating skull">💀</div>
+        </div>
+        <h1 class="hero-title weird-title">🔮 Weird & Super Freak</h1>
+        <p class="hero-subtitle">Bizarre, surreal, and mind-bending movies that break all the rules</p>
+        <div class="hero-badges">
+            <span class="hero-badge">🌀 Surreal</span>
+            <span class="hero-badge">🧠 Psychological</span>
+            <span class="hero-badge">👁️ Mind-Bending</span>
+            <span class="hero-badge">🎪 Bizarre</span>
+        </div>
+    </div>
+</section>
+
+    <section class="movies-section">
+        <div class="container">
+            <h2>Freaky & Unconventional Films</h2>
+            
+            <% if (weirdMovies && weirdMovies.length > 0) { %>
+                <div class="movies-grid">
+                    <% weirdMovies.forEach(movie => { %>
+                        <div class="movie-card weird-card" onclick="location.href='/movie/<%= movie.id %>'">
+                            <img src="https://image.tmdb.org/t/p/w500<%= movie.poster_path %>" alt="<%= movie.title %>" onerror="this.style.display='none'">
+                            <div class="movie-info">
+                                <h3><%= movie.title %></h3>
+                                <p>
+                                    <%= movie.release_date ? new Date(movie.release_date).getFullYear() : 'TBA' %> 
+                                    • ⭐ <%= movie.vote_average ? movie.vote_average.toFixed(1) : 'N/A' %>
+                                </p>
+                                <div class="weird-badge">Weird</div>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div>
+            <% } else { %>
+                <div class="no-results">
+                    <h3>No weird movies found</h3>
+                    <p>Try refreshing the page or check your TMDB API key</p>
+                </div>
+            <% } %>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🎬 TrailerHub</h3>
+                    <p>Your ultimate destination for movie trailers and entertainment discovery.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Explore</h4>
+                    <div class="footer-links">
+                        <a href="/">Home</a>
+                        <a href="/anime">Anime</a>
+                        <a href="/weird">Weird & Freak</a>
+                        <a href="/weed">Weed & Smoke</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect With Me</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/Manubyebye" target="_blank" class="social-link github">
+                            <span>💻 GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/manuel-javier-jordan-penagos-949450159/" target="_blank" class="social-link linkedin">
+                            <span>💼 LinkedIn</span>
+                        </a>
+                        <a href="https://www.instagram.com/manubyebye1985/" target="_blank" class="social-link instagram">
+                            <span>📷 Instagram</span>
+                        </a>
+                        <a href="https://manueljordan.com/" target="_blank" class="social-link portfolio">
+                            <span>🌐 Portfolio</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <div class="contact-info">
+                        <p>📧 manueljp1985@gmail.com</p>
+                        <p>📍 Praha 4 Czech Republic</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2024 TrailerHub. All rights reserved.</p>
+                    <p>Created with ❤️ by <strong>Manuel Jordan</strong></p>
+                </div>
+                <div class="footer-badges">
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">Express</span>
+                    <span class="tech-badge">TMDB API</span>
+                    <span class="tech-badge">JavaScript</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
