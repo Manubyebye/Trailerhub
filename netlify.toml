@@ -1,9 +1,14 @@
 [build]
-  command = "npm run build:function"
+  command = "npm install"
   publish = "."
 
 [functions]
-  directory = "functions-dist"
+  directory = "functions"
+  included_files = [
+    "views/**",
+    "public/**",
+    "node_modules/**"
+  ]
 
 [[redirects]]
   from = "/*"
