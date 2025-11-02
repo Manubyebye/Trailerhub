@@ -1,10 +1,9 @@
 [build]
-  command = "npm install"
+  command = "npm run build:function"
   publish = "."
 
 [functions]
-  directory = "functions"
-  node_bundler = "esbuild"
+  directory = "functions-dist"
 
 [[redirects]]
   from = "/*"
