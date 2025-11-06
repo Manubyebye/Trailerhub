@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weird & Freak Movies - TrailerHub</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🎬 TrailerHub</div>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/anime.html">Anime</a>
+                <a href="/weird.html" class="active">Weird & Freak</a>
+                <a href="/weed.html">Weed & Smoke</a>
+            </div>
+            <div class="search-container">
+                <form class="search-form" onsubmit="searchWeird(event)">
+                    <input type="text" id="searchInput" placeholder="Search weird movies..." class="search-input">
+                    <button type="submit" class="search-button">🔍</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <section class="category-hero weird-hero">
+        <div class="hero-gif-background"></div>
+        <div class="hero-content">
+            <div class="floating-elements">
+                <div class="floating alien">👽</div>
+                <div class="floating ghost">👻</div>
+                <div class="floating skull">💀</div>
+            </div>
+            <h1 class="hero-title weird-title">🔮 Weird & Super Freak</h1>
+            <p class="hero-subtitle">Bizarre, surreal, and mind-bending movies that break all the rules</p>
+            <div class="hero-badges">
+                <span class="hero-badge">🌀 Surreal</span>
+                <span class="hero-badge">🧠 Psychological</span>
+                <span class="hero-badge">👁️ Mind-Bending</span>
+                <span class="hero-badge">🎪 Bizarre</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="movies-section">
+        <div class="container">
+            <h2>Freaky & Unconventional Films</h2>
+            <div id="moviesGrid" class="movies-grid">
+                <div class="loading">Loading weird movies...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Same Footer as anime.html -->
+    <footer class="site-footer">
+        <!-- COPY THE SAME FOOTER FROM anime.html -->
+    </footer>
+
+    <script src="/js/weird.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>
