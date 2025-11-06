@@ -1,36 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>TrailerHub - Loading...</title>
-    <style>
-        body { 
-            background: #0f0f0f; 
-            color: white; 
-            font-family: Arial, sans-serif; 
-            text-align: center; 
-            padding: 100px;
-            margin: 0;
-        }
-        .loading { 
-            font-size: 2rem; 
-            color: #e50914; 
-            margin-bottom: 20px;
-        }
-        .logo {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrailerHub - Latest Movie Trailers</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <div class="logo">🎬</div>
-    <div class="loading">TrailerHub is Starting Up...</div>
-    <p>Your movie trailer app is loading. Please wait a moment.</p>
-    <script>
-        // Auto-refresh every 3 seconds until Express app loads
-        setTimeout(() => {
-            window.location.reload();
-        }, 3000);
-    </script>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🎬 TrailerHub</div>
+            <div class="nav-links">
+                <a href="/" class="active">Home</a>
+                <a href="/anime.html">Anime</a>
+                <a href="/weird.html">Weird & Freak</a>
+                <a href="/weed.html">Weed & Smoke</a>
+            </div>
+            <div class="search-container">
+                <form class="search-form" onsubmit="searchMovies(event)">
+                    <input type="text" id="searchInput" placeholder="Search movies..." class="search-input">
+                    <button type="submit" class="search-button">🔍</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero home-hero">
+        <div class="hero-gif-background"></div>
+        <div class="hero-content">
+            <div class="floating-elements">
+                <div class="floating popcorn">🍿</div>
+                <div class="floating film">🎞️</div>
+                <div class="floating clapper">🎬</div>
+            </div>
+            <h1 class="hero-title">Discover Amazing Movie Trailers</h1>
+            <p class="hero-subtitle">Watch the latest trailers from upcoming and popular movies</p>
+            <div class="hero-badges">
+                <span class="hero-badge">🎭 Drama</span>
+                <span class="hero-badge">🤣 Comedy</span>
+                <span class="hero-badge">🚀 Action</span>
+                <span class="hero-badge">❤️ Romance</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="movies-section">
+        <div class="container">
+            <h2>Latest Movies</h2>
+            <div id="moviesGrid" class="movies-grid">
+                <!-- Movies will be loaded here by JavaScript -->
+                <div class="loading">Loading movies...</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <!-- Your existing footer code here -->
+    </footer>
+
+    <script src="/js/movies.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>
