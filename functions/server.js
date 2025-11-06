@@ -7,6 +7,11 @@ const fs = require('fs');
 
 const app = express();
 
+// Add this near the top after express setup
+app.use('/css', express.static(path.join(__dirname, '../public/css')));
+app.use('/js', express.static(path.join(__dirname, '../public/js')));
+app.use('/images', express.static(path.join(__dirname, '../public/images')));
+
 // Configure EJS properly
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../views'));
@@ -14,6 +19,25 @@ app.set('views', path.join(__dirname, '../views'));
 // Serve static files
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.urlencoded({ extended: true }));
+
+// Serve static files - PUT THIS RIGHT AFTER express.urlencoded
+app.use('/css', express.static(path.join(__dirname, '../public/css'), {
+  setHeaders: (res, path) => {
+    if (path.endsWith('.css')) {
+      res.setHeader('Content-Type', 'text/css');
+    }
+  }
+}));
+
+app.use('/js', express.static(path.join(__dirname, '../public/js'), {
+  setHeaders: (res, path) => {
+    if (path.endsWith('.js')) {
+      res.setHeader('Content-Type', 'application/javascript');
+    }
+  }
+}));
+
+app.use(express.static(path.join(__dirname, '../public')));
 
 // Home route
 app.get('/', async (req, res) => {

@@ -1,3 +1,6 @@
+// Add this at the VERY TOP of public/js/script.js
+const currentPath = window.location.pathname;
+
 // Search functionality enhancements
 document.addEventListener('DOMContentLoaded', function() {
     // Focus search input when page loads if there's a search query
