@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TrailerHub - Loading...</title>
+    <style>
+        body { 
+            background: #0f0f0f; 
+            color: white; 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            padding: 100px;
+            margin: 0;
+        }
+        .loading { 
+            font-size: 2rem; 
+            color: #e50914; 
+            margin-bottom: 20px;
+        }
+        .logo {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">🎬</div>
+    <div class="loading">TrailerHub is Starting Up...</div>
+    <p>Your movie trailer app is loading. Please wait a moment.</p>
+    <script>
+        // Auto-refresh every 3 seconds until Express app loads
+        setTimeout(() => {
+            window.location.reload();
+        }, 3000);
+    </script>
+</body>
+</html>
